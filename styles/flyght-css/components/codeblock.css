@@ -1,0 +1,21 @@
+pre,
+:not(pre) > code {
+  background-color: var(--fc-muted-light);
+  font-family: var(--fc-monospace-font);
+  border-radius: var(--fc-border-radius);
+  overflow-x: auto;
+  &.fc-border-left {
+    border-left: var(--fc-border-line-accent);
+    --fc-border-color: var(--fc-muted);
+    border-color: var(--fc-border-color);
+  }
+}
+
+pre {
+  padding: var(--fc-spacing-default);
+  margin: var(--fc-spacing-equal-large);
+}
+
+:not(pre) > code {
+  padding: 2px 1ch;
+}

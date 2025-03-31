@@ -1,0 +1,56 @@
+.fc-tab-content {
+  display: none;
+  padding: var(--fc-spacing-default);
+
+  &.fc-tab-active {
+    display: block;
+  }
+}
+
+.fc-tab-group {
+  @layer base {
+    border-bottom: var(--fc-border-line);
+    border-color: var(--fc-border-color);
+    margin-bottom: 1em;
+    display: flex;
+    gap: var(--fc-gap-small);
+    &.fc-card-tabs {
+      margin: 1em 0 0 0;
+    }
+    .fc-tab-btn {
+      flex: 1 1 0;
+      background-color: unset;
+      color: var(--black);
+      box-shadow: none;
+      border: none;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      margin: 0;
+      padding: calc(var(--fc-spacing-vertical) + var(--fc-border-width-accent))
+        var(--fc-spacing-horizontal);
+      outline-offset: -2px;
+
+      &:hover,
+      &:focus {
+        background-color: hsl(var(--fc-color-hs) var(--fc-v-light));
+      }
+      &:focus,
+      &.fc-tab-active {
+        margin-bottom: calc(0px - var(--fc-border-width));
+        border-bottom-style: solid;
+        border-color: var(--fc-color-default);
+      }
+      &:focus {
+        outline-color: var(--fc-color-default);
+        border-bottom-width: var(--fc-border-width);
+      }
+
+      &.fc-tab-active {
+        padding-bottom: calc(
+          var(--fc-spacing-vertical) + var(--fc-border-width)
+        );
+        border-bottom-width: var(--fc-border-width-accent);
+      }
+    }
+  }
+}

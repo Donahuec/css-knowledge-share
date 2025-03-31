@@ -1,4 +1,46 @@
 body,
 html {
   height: 100%;
+  background-color: var(--surface);
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --edge-size: 10%;
+  }
+}
+
+.layout-container {
+  min-height: 100vh;
+  margin-inline: clamp(var(--s4), var(--edge-size, 20%), var(--s11));
+  padding-inline: var(--s5);
+  padding-block: var(--s4);
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main";
+  grid-template-rows: min-content 1fr;
+  gap: var(--s4);
+  background-color: var(--white);
+  box-shadow: 0 0 var(--s4) rgba(0, 0, 0, 0.1);
+}
+
+.layout-header {
+  grid-area: header;
+  justify-self: center;
+  text-align: center;
+}
+
+.layout-main {
+  grid-area: main;
+}
+
+.decorated-header {
+  padding-block: var(--s2);
+  margin-block: var(--s2);
+  border-bottom: 2px solid var(--fc-primary);
+}
+
+.section-block {
+  padding-block: var(--s3);
 }
