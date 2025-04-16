@@ -1,4 +1,3 @@
-<!-- Home page for a simple vanilla js/css/html tutorial website -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,35 +13,62 @@
       }
       dd {
         font-weight: bold;
-        flex-basis: 58px;
+        min-width: var(--s8);
       }
       dt {
         margin-bottom: 1rem;
+      }
+
+      .sample-block {
+        padding: var(--s2);
+        background-color: var(--primary);
+        color: var(--nord0);
+        margin-block: var(--s2);
+      }
+
+      .font-examples {
+        display: flex;
+        flex-direction: column;
+        gap: var(--s2);
       }
     </style>
   </head>
   <body>
     <div class="layout-container">
       <header class="layout-header">
-        <h1>Sizing</h1>
+        <h1>CSS Knowledge Share - Sizing</h1>
+        <nav>
+          <a href="./index.html"
+            >Back to Index</a
+          >
+        </nav>
       </header>
       <main class="layout-main">
         <section #units>
           <h2 class="decorated-header">Units</h2>
           <section class="section-block">
-            <h3>Relative Units</h3>
+            <h3>Absolute Units</h3>
+            <dl>
+              <span class="dl-item">
+                <dd>px</dd>
+                <dt>pixels, standard static unit. Good for instances where a set size is required. Also frequently used for spacing and smaller details that don't need to adapt.</dt>
+              </span>
+            </dl>
+          </section>
+          <section class="section-block">
+            <h3 >Relative Units</h3>
             <dl>
               <span class="dl-item">
                 <dd>%</dd>
-                <dt>relative to the parent element</dt>
+                <dt>relative to the parent element. Good all-arounder for for laying out elements and flexible design.</dt>
               </span>
               <span class="dl-item">
                 <dd>vw</dd>
-                <dt>relative to 1% of the width of the viewport</dt>
+                <dt>relative to 1% of the width of the viewport. Commonly used for sizing top-level elements (i.e. body, main), or elements that break out of the standard page flow (i.e. modals, overlays).</dt>
               </span>
               <span class="dl-item">
                 <dd>vh</dd>
-                <dt>relative to 1% of the height of the viewport</dt>
+                <dt>relative to 1% of the height of the viewport. Similar to vw, but for vertical sizing.</dt>
               </span>
               <span class="dl-item">
                 <dd>vmin</dd>
@@ -53,29 +79,60 @@
                 <dt>relative to 1% of the viewport's larger dimension</dt>
               </span>
             </dl>
+            <div class="sample-block" style="width: 100%">
+              <p>100% of the parent element</p>
+            </div>
+            <div class="sample-block" style="width: 25%">
+              <p>25% of the parent element</p>
+            </div>
+            <div class="sample-block" style="width: 25vw">
+              <p>25% of viewport width</p>
+            </div>
+            <div class="sample-block" style="width: 25vh">
+              <p>25% of viewport height</p>
+            </div>
+            <div class="sample-block" style="width: 25vmin;">
+              <p>25% of smaller dimension of viewport</p>
+            </div>
+            <div class="sample-block" style="width: 25vmax;">
+              <p>25% of larger dimension of viewport</p>
+            </div>
           </section>
           <section class="section-block">
             <h3>Typographic Units</h3>
             <dl>
               <span class="dl-item">
-                <dd>em</dd>
-                <dt>relative to the font-size of the element</dt>
-              </span>
-              <span class="dl-item">
                 <dd>rem</dd>
-                <dt>relative to the font-size of the root element</dt>
+                <dt>relative to the font-size of the root (browser) font-size - usually 16px. Best practice for font-sizes other than ones that are intentionally relative to another font-size (in which case, use em)</dt>
               </span>
-            </dl>
-          </section>
-          <section class="section-block">
-            <h3>Absolute Units</h3>
-            <dl>
               <span class="dl-item">
-                <dd>px</dd>
-                <dt>pixels</dt>
-              </span>
+                <dd>em</dd>
+                <dt>relative to the font-size of the element. Good for reusable elements that may have different parent font sizes, as well as for layout spacing that should be relative to text.</dt>
+              </span>        
             </dl>
+            <h4>Examples</h4>
+            <div class="font-examples">
+              <p style="font-size: 1rem">
+                1rem: The quick brown fox jumps over the lazy dog
+              </p>
+              <p style="font-size: 1em">
+                1em with body font (1rem) as parent: The quick brown fox jumps over the lazy dog
+              </p>
+              <p style="font-size: 1.5rem">
+                1.5rem: The quick brown fox jumps over the lazy dog
+                <br />
+                <span style="font-size: 1em">
+                  1em with 1.5rem parent
+                </span>
+              </p>
+              <p style="font-size: 16px">
+                16px: The quick brown fox jumps over the lazy dog
+              </p>
+            </div>
+            
+            
           </section>
+          
         </section>
       </main>
     </div>

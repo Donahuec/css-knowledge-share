@@ -1,16 +1,112 @@
 :root {
+  /* Converted to hsl from nord css
+    see nord.css for original file and source */
+  --nord0-hsl: 220 16% 22%;
+  --nord1-hsl: 222 16% 28%;
+  --nord2-hsl: 220 17% 32%;
+  --nord3-hsl: 220 16% 36%;
+  --nord4-hsl: 219 28% 88%;
+  --nord5-hsl: 218 27% 92%;
+  --nord6-hsl: 218 27% 94%;
+  --nord7-hsl: 179 25% 65%;
+  --nord8-hsl: 193 43% 67%;
+  --nord9-hsl: 210 34% 63%;
+  --nord10-hsl: 213 32% 52%;
+  --nord11-hsl: 354 42% 56%;
+  --nord12-hsl: 14 51% 63%;
+  --nord13-hsl: 40 71% 73%;
+  --nord14-hsl: 92 28% 65%;
+  --nord15-hsl: 311 20% 63%;
+
+  --nord0: hsla(var(--nord0-hsl) / 1);
+  --nord1: hsla(var(--nord1-hsl) / 1);
+  --nord2: hsla(var(--nord2-hsl) / 1);
+  --nord3: hsla(var(--nord3-hsl) / 1);
+  --nord4: hsla(var(--nord4-hsl) / 1);
+  --nord5: hsla(var(--nord5-hsl) / 1);
+  --nord6: hsla(var(--nord6-hsl) / 1);
+  --nord7: hsla(var(--nord7-hsl) / 1);
+  --nord8: hsla(var(--nord8-hsl) / 1);
+  --nord9: hsla(var(--nord9-hsl) / 1);
+  --nord10: hsla(var(--nord10-hsl) / 1);
+  --nord11: hsla(var(--nord11-hsl) / 1);
+  --nord12: hsla(var(--nord12-hsl) / 1);
+  --nord13: hsla(var(--nord13-hsl) / 1);
+  --nord14: hsla(var(--nord14-hsl) / 1);
+  --nord15: hsla(var(--nord15-hsl) / 1);
+}
+
+:root {
   /* Sizing */
-  --s1: 0.25rem; /* 4px */
-  --s2: 0.5rem; /* 8px */
-  --s3: 0.75rem; /* 12px */
-  --s4: 1rem; /* 16px */
-  --s5: 1.5rem; /* 24px */
-  --s6: 2rem; /* 32px */
-  --s7: 3rem; /* 48px */
-  --s8: 4rem; /* 64px */
-  --s9: 6rem; /* 96px */
-  --s10: 8rem; /* 128px */
-  --s11: 16rem; /* 256px */
-  --s12: 24rem; /* 384px */
-  --s13: 32rem; /* 512px */
+  --s1: 0.25rem;
+  /* 4px */
+  --s2: 0.5rem;
+  /* 8px */
+  --s3: 0.75rem;
+  /* 12px */
+  --s4: 1rem;
+  /* 16px */
+  --s5: 1.5rem;
+  /* 24px */
+  --s6: 2rem;
+  /* 32px */
+  --s7: 3rem;
+  /* 48px */
+  --s8: 4rem;
+  /* 64px */
+  --s9: 6rem;
+  /* 96px */
+  --s10: 8rem;
+  /* 128px */
+  --s11: 16rem;
+  /* 256px */
+  --s12: 24rem;
+  /* 384px */
+  --s13: 32rem;
+  /* 512px */
+
+  /* Colors */
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+}
+
+:root {
+  /*Light Theme*/
+  --primary: var(--nord8);
+  --primary-hsl: var(--nord8-hsl);
+  --secondary: var(--nord7);
+  --secondary-hsl: var(--nord7-hsl);
+  --tertiary: var(--nord10);
+  --tertiary-hsl: var(--nord10-hsl);
+
+  --success: var(--nord14);
+  --success-hsl: var(--nord14-hsl);
+  --warn: var(--nord12);
+  --warn-hsl: var(--nord12-hsl);
+  --error: var(--nord11);
+  --error-hsl: var(--nord11-hsl);
+
+  --background: var(--nord0);
+  --on-background: var(--nord6);
+  --surface: var(--nord1);
+  --on-surface: var(--nord6);
+  --surface-variant: var(--nord2);
+  --on-surface-variant: var(--nord6);
+  --muted: var(--nord3);
+  --muted-hsl: var(--nord3-hsl);
+  --muted-text: var(--nord4);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: var(--nord4);
+    --on-background: var(--nord0);
+    --surface: var(--nord6);
+    --on-surface: var(--nord0);
+    --surface-variant: var(--nord5);
+    --on-surface-variant: var(--nord0);
+    --muted: var(--nord0);
+    --muted-hsl: var(--nord0-hsl);
+    --muted-text: var(--nord1);
+  }
 }

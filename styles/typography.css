@@ -1,5 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* Typography */
+  --default-font: "Roboto", sans-serif;
+  --monospace-font: "Roboto Mono", monospace;
+  --link-decoration: none;
+}
+
 html {
   font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
+}
+
+body {
+  font-family: var(--default-font);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  color: var(--on-surface);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  line-height: 110%;
+  margin-block: 0.5em;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+
+small {
+  font-weight: lighter;
+}
+
+mark {
+  background-color: var(--primary-light);
+  padding: 0 0.25ch;
+  margin: 0 -0.25ch;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: var(--link-decoration);
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    text-decoration: underline solid 2px;
+  }
+
+  &:focus {
+    outline-color: currentColor;
+    outline-offset: 0.25em;
+  }
 }
