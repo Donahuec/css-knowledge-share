@@ -71,7 +71,8 @@
 }
 
 :root {
-  /*Light Theme*/
+  color-scheme: var(--color-scheme, dark);
+
   --primary: var(--nord8);
   --primary-hsl: var(--nord8-hsl);
   --secondary: var(--nord7);
@@ -95,10 +96,12 @@
   --muted: var(--nord3);
   --muted-hsl: var(--nord3-hsl);
   --muted-text: var(--nord4);
-}
+  --accent-text: var(--primary);
 
-@media (prefers-color-scheme: light) {
-  :root {
+  /* page preference is "dark" */
+  /* https://www.smashingmagazine.com/2024/03/setting-persisting-color-scheme-preferences-css-javascript/ */
+  &:has(#color-scheme option[value="light"]:checked) {
+    --color-scheme: light;
     --background: var(--nord4);
     --on-background: var(--nord0);
     --surface: var(--nord6);
@@ -108,5 +111,24 @@
     --muted: var(--nord0);
     --muted-hsl: var(--nord0-hsl);
     --muted-text: var(--nord1);
+    --accent-text: hsl(193, 81%, 32%);
+  }
+
+  @media (prefers-color-scheme: light) {
+    &:has(#color-scheme option[value="system"]:checked) {
+        /*Light Theme*/
+      --color-scheme: light;
+      --background: var(--nord4);
+      --on-background: var(--nord0);
+      --surface: var(--nord6);
+      --on-surface: var(--nord0);
+      --surface-variant: var(--nord5);
+      --on-surface-variant: var(--nord0);
+      --muted: var(--nord0);
+      --muted-hsl: var(--nord0-hsl);
+      --muted-text: var(--nord1);
+      --accent-text: hsl(193, 81%, 32%);
+      }
   }
 }
+
