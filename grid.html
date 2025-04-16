@@ -1,0 +1,226 @@
+<!-- Page showing example usages of css grid -->
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8" />
+<title>CSS Knowledge Share - Sizing</title>
+<link rel="stylesheet" href="styles.css" />
+
+<head>
+    <style>
+        .grid-item {
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: var(--nord0);
+        }
+
+        .grid-item:nth-child(3n) {
+            background-color: var(--primary);
+        }
+
+        .grid-item:nth-child(3n+1) {
+            background-color: var(--secondary);
+        }
+
+        .grid-item:nth-child(3n+2) {
+            background-color: var(--tertiary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout-container">
+        <header class="layout-header">
+            <h1>CSS Knowledge Share - Grid</h1>
+            <nav>
+                <a href="./index.html">Back to Index</a>
+            </nav>
+        </header>
+        <main class="layout-main">
+
+            <h2> Holy Grail layout</h2>
+            <style>
+                .holy-grail-grid-container {
+                    display: grid;
+                    grid-template-columns: 1fr 3fr 1fr;
+                    grid-template-rows: auto 1fr auto;
+                    gap: 10px;
+                }
+
+                .grid-item {
+                    background-color: lightblue;
+                    padding: 20px;
+                    text-align: center;
+                }
+
+                .header {
+                    grid-column: 1 / -1;
+                }
+
+                .left-sidebar {
+                    grid-column: 1 / 2;
+                }
+
+                .main-content {
+                    grid-column: 2 / 3;
+                    min-height: 300px;
+                }
+
+                .right-sidebar {
+                    grid-column: 3 / -1;
+                }
+
+                .footer {
+                    grid-column: 1 / -1;
+                }
+            </style>
+
+            <div class="holy-grail-grid-container">
+                <div class="grid-item header">Header</div>
+                <div class="grid-item left-sidebar">Left Sidebar</div>
+                <div class="grid-item main-content">Main Content</div>
+                <div class="grid-item right-sidebar">Right Sidebar</div>
+                <div class="grid-item footer">Footer</div>
+            </div>
+            <h2> Simple grid layout</h2>
+            <style>
+                .simple-grid-container {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 10px;
+                }
+            </style>
+            <div class="simple-grid-container">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+            </div>
+            <h2>Complex Layout</h2>
+            <style>
+                .complex-grid-container {
+                    display: grid;
+                    grid-template-columns: repeat(6, 1fr);
+                    gap: 10px;
+                }
+
+                .section1,
+                .section4,
+                .section8 {
+                    grid-column: span 6;
+                }
+
+                .section2,
+                .section3 {
+                    grid-column: span 3;
+                }
+
+                .section5,
+                .section6,
+                .section7 {
+                    grid-column: span 2;
+                }
+
+                .sub-grid {
+                    display: grid;
+                    grid-template-columns: subgrid;
+                }
+
+                .sub-item {
+                    background-color: var(--nord15);
+                    padding: 10px;
+                }
+
+                .section4 .sub-item {
+                    grid-column: span 3;
+                }
+
+                .section8 .sub-item {
+                    grid-column: span 2;
+                }
+
+                @media screen and (max-width: 600px) {
+                    .complex-grid-container {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .section1,
+                    .section4,
+                    .section2,
+                    .section3,
+                    .section5,
+                    .section6,
+                    .section7,
+                    .section8 {
+                        grid-column: span 1;
+                    }
+
+                    .sub-grid {
+                        grid-template-columns: 1fr;
+                        gap: 10px;
+                    }
+
+                    .sub-item {
+                        grid-column: span 1;
+                    }
+
+                }
+            </style>
+            <div class="complex-grid-container">
+                <div class="grid-item section1">Section 1</div>
+                <div class="grid-item section2">Section 2</div>
+                <div class="grid-item section3">Section 3</div>
+                <div class="grid-item section4 sub-grid">
+                    <div class="sub-item">Subgrid 4</div>
+                    <div class="sub-item">Subgrid 4</div>
+                </div>
+                <div class="grid-item section5">Section 5</div>
+                <div class="grid-item section6">Section 6</div>
+                <div class="grid-item section7">Section 7</div>
+                <div class="grid-item section8 sub-grid">
+                    <div class="sub-item">Subgrid 8</div>
+                    <div class="sub-item">Subgrid 8</div>
+                    <div class="sub-item">Subgrid 8</div>
+                </div>
+            </div>
+
+            <h2>Fluid Grid</h2>
+            <style>
+                .fluid-grid-container {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                    gap: 10px;
+                }
+            </style>
+            <div class="fluid-grid-container">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
