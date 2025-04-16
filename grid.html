@@ -82,6 +82,56 @@
                 <div class="grid-item right-sidebar">Right Sidebar</div>
                 <div class="grid-item footer">Footer</div>
             </div>
+            <details>
+                <summary>CSS</summary>
+                <pre><code>
+.holy-grail-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    grid-column: 1 / -1;
+}
+
+.left-sidebar {
+    grid-column: 1 / 2;
+}
+
+.main-content {
+    grid-column: 2 / 3;
+    min-height: 300px;
+}
+
+.right-sidebar {
+    grid-column: 3 / -1;
+}
+
+.footer {
+    grid-column: 1 / -1;
+}
+            </code></pre>
+            </details>
+            <details>
+                <summary>HTML</summary>
+                <pre><code>
+&lt;div class=&quot;holy-grail-grid-container&quot;&gt;
+    &lt;div class=&quot;grid-item header&quot;&gt;Header&lt;/div&gt;
+    &lt;div class=&quot;grid-item left-sidebar&quot;&gt;Left Sidebar&lt;/div&gt;
+    &lt;div class=&quot;grid-item main-content&quot;&gt;Main Content&lt;/div&gt;
+    &lt;div class=&quot;grid-item right-sidebar&quot;&gt;Right Sidebar&lt;/div&gt;
+    &lt;div class=&quot;grid-item footer&quot;&gt;Footer&lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+            </details>
             <h2> Simple grid layout</h2>
             <style>
                 .simple-grid-container {
@@ -104,6 +154,27 @@
                 <div class="grid-item">2</div>
                 <div class="grid-item">3</div>
             </div>
+            <details>
+                <summary>CSS</summary>
+                <pre><code>
+.simple-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+            </code></pre>
+            </details>
+            <details>
+                <summary>HTML</summary>
+                <pre><code>
+&lt;div class=&quot;simple-grid-container&quot;&gt;
+    &lt;div class=&quot;grid-item&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;grid-item&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;grid-item&quot;&gt;3&lt;/div&gt;
+    &lt;...&gt;
+&lt;/div&gt;
+        </code></pre>
+            </details>
             <h2>Complex Layout</h2>
             <style>
                 .complex-grid-container {
@@ -191,7 +262,100 @@
                     <div class="sub-item">Subgrid 8</div>
                 </div>
             </div>
+            <details>
+                <summary>CSS</summary>
+                <pre><code>
+.complex-grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
 
+.section1,
+.section4,
+.section8 {
+    grid-column: span 6;
+}
+
+.section2,
+.section3 {
+    grid-column: span 3;
+}
+
+.section5,
+.section6,
+.section7 {
+    grid-column: span 2;
+}
+
+.sub-grid {
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+.sub-item {
+    background-color: var(--nord15);
+    padding: 10px;
+}
+
+.section4 .sub-item {
+    grid-column: span 3;
+}
+
+.section8 .sub-item {
+    grid-column: span 2;
+}
+
+@media screen and (max-width: 600px) {
+    .complex-grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section1,
+    .section4,
+    .section2,
+    .section3,
+    .section5,
+    .section6,
+    .section7,
+    .section8 {
+        grid-column: span 1;
+    }
+
+    .sub-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .sub-item {
+        grid-column: span 1;
+    }
+
+}
+            </code></pre>
+            </details>
+            <details>
+                <summary>HTML</summary>
+                <pre><code>
+&lt;div class=&quot;complex-grid-container&quot;&gt;
+    &lt;div class=&quot;grid-item section1&quot;&gt;Section 1&lt;/div&gt;
+    &lt;div class=&quot;grid-item section2&quot;&gt;Section 2&lt;/div&gt;
+    &lt;div class=&quot;grid-item section3&quot;&gt;Section 3&lt;/div&gt;
+    &lt;div class=&quot;grid-item section4 sub-grid&quot;&gt;
+        &lt;div class=&quot;sub-item&quot;&gt;Subgrid 4&lt;/div&gt;
+        &lt;div class=&quot;sub-item&quot;&gt;Subgrid 4&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-item section5&quot;&gt;Section 5&lt;/div&gt;
+    &lt;div class=&quot;grid-item section6&quot;&gt;Section 6&lt;/div&gt;
+    &lt;div class=&quot;grid-item section7&quot;&gt;Section 7&lt;/div&gt;
+    &lt;div class=&quot;grid-item section8 sub-grid&quot;&gt;
+        &lt;div class=&quot;sub-item&quot;&gt;Subgrid 8&lt;/div&gt;
+        &lt;div class=&quot;sub-item&quot;&gt;Subgrid 8&lt;/div&gt;
+        &lt;div class=&quot;sub-item&quot;&gt;Subgrid 8&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+            </details>
             <h2>Fluid Grid</h2>
             <style>
                 .fluid-grid-container {
@@ -218,6 +382,28 @@
                 <div class="grid-item">3</div>
                 <div class="grid-item">4</div>
             </div>
+            <details>
+                <summary>CSS</summary>
+                <pre><code>
+.fluid-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+            </code></pre>
+            </details>
+            <details>
+                <summary>HTML</summary>
+                <pre><code>
+&lt;div class=&quot;fluid-grid-container&quot;&gt;
+    &lt;div class=&quot;grid-item&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;grid-item&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;grid-item&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;grid-item&quot;&gt;4&lt;/div&gt;
+    &lt;...&gt;
+&lt;/div&gt;
+        </code></pre>
+            </details>
         </main>
     </div>
 

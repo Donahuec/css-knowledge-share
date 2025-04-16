@@ -59,3 +59,35 @@ html {
 .section-block {
   padding-block: var(--s3);
 }
+
+pre,
+:not(pre) > code {
+  background-color: var(--background);
+  font-family: var(--monospace-font);
+  border-radius: 4px;
+  overflow-x: auto;
+  border-left: solid 3px;
+  border-color: var(--primary);
+}
+
+pre {
+  padding-inline: var(--s6);
+  padding-block: var(--s3);
+}
+
+:not(pre) > code {
+  padding: 2px 1ch;
+}
+
+details {
+  padding: var(--s3);
+  background-color: var(--surface-variant);
+  border-radius: var(--s2);
+  margin-block: var(--s2);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: var(--s1);
+}
