@@ -16,6 +16,7 @@
   gap: var(--spacing-medium);
   background-color: var(--surface);
   box-shadow: 0 0 var(--spacing-medium) rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition);
 }
 
 @media screen and (max-width: 1200px) {

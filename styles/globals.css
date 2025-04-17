@@ -2,5 +2,6 @@ body,
 html {
   height: 100%;
   background-color: var(--background);
+  transition: background-color var(--transition);
 }
 

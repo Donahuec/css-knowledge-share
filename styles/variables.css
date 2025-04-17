@@ -79,4 +79,7 @@
   /* Shared Styles */
   --focus-outline: 2px solid var(--primary);
   --decorative-border: 3px solid var(--primary);
+  --transition-time: 250ms;
+  --transition-curve: ease;
+  --transition: var(--transition-time) var(--transition-curve);
 }
