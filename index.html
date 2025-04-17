@@ -8,13 +8,20 @@
   </head>
   <body>
     <div class="layout-container">
-      <header class="layout-header">
-        <h1>CSS Knowledge Share</h1>
-        <nav>
-          <a href="https://github.com/Donahuec/css-knowledge-share"
-            >GitHub Repository</a
-          >
+      <header>
+        <nav class="layout-nav">
+          <p>CSS Knowledge Share</p>
+          <a href="./">Home</a>
+          <a href="https://github.com/Donahuec/css-knowledge-share">GitHub</a>
+          <div class="select">
+            <select id="color-scheme">
+              <option value="system" selected>System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
         </nav>
+        <h1 class="layout-header">CSS Knowledge Share</h1>
       </header>
       <main class="layout-main">
         <section #topics>
@@ -41,14 +48,8 @@
         <section #resources>
           <h2 class="decorated-header">Resources</h2>
         </section>
-        <select id="color-scheme">
-          <option value="system" selected>System</option>
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-        </select>
       </main>
     </div>
     <script src="./global.scripts.js"></script>
   </body>
 </html>
-

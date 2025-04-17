@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   /* Typography */
@@ -17,7 +17,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.75rem;
-  color: var(--on-surface);
+  color: var(--body-text);
 }
 
 h1,
@@ -56,10 +56,9 @@ h6 {
   font-weight: 400;
 }
 
-
 a {
   color: var(--accent-text);
-  text-decoration: var(--link-decoration);
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;

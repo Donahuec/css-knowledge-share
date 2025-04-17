@@ -35,18 +35,25 @@
   </head>
   <body>
     <div class="layout-container">
-      <header class="layout-header">
-        <h1>CSS Knowledge Share - Sizing</h1>
-        <nav>
-          <a href="./index.html"
-            >Back to Index</a
-          >
+      <header>
+        <nav class="layout-nav">
+          <p>CSS Knowledge Share</p>
+          <a href="./index.html">Home</a>
+          <a href="https://github.com/Donahuec/css-knowledge-share">GitHub</a>
+          <div class="select">
+            <select id="color-scheme">
+              <option value="system" selected>System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
         </nav>
-        <select id="color-scheme">
-          <option value="system" selected>System</option>
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-        </select>
+        <div class="layout-header">
+          <h1>Sizing</h1>
+          <nav>
+            <a href="./index.html">Back to Index</a>
+          </nav>
+        </div>
       </header>
       <main class="layout-main">
         <section #units>
@@ -56,24 +63,38 @@
             <dl>
               <span class="dl-item">
                 <dd>px</dd>
-                <dt>pixels, standard static unit. Good for instances where a set size is required. Also frequently used for spacing and smaller details that don't need to adapt.</dt>
+                <dt>
+                  pixels, standard static unit. Good for instances where a set
+                  size is required. Also frequently used for spacing and smaller
+                  details that don't need to adapt.
+                </dt>
               </span>
             </dl>
           </section>
           <section class="section-block">
-            <h3 >Relative Units</h3>
+            <h3>Relative Units</h3>
             <dl>
               <span class="dl-item">
                 <dd>%</dd>
-                <dt>relative to the parent element. Good all-arounder for for laying out elements and flexible design.</dt>
+                <dt>
+                  relative to the parent element. Good all-arounder for for
+                  laying out elements and flexible design.
+                </dt>
               </span>
               <span class="dl-item">
                 <dd>vw</dd>
-                <dt>relative to 1% of the width of the viewport. Commonly used for sizing top-level elements (i.e. body, main), or elements that break out of the standard page flow (i.e. modals, overlays).</dt>
+                <dt>
+                  relative to 1% of the width of the viewport. Commonly used for
+                  sizing top-level elements (i.e. body, main), or elements that
+                  break out of the standard page flow (i.e. modals, overlays).
+                </dt>
               </span>
               <span class="dl-item">
                 <dd>vh</dd>
-                <dt>relative to 1% of the height of the viewport. Similar to vw, but for vertical sizing.</dt>
+                <dt>
+                  relative to 1% of the height of the viewport. Similar to vw,
+                  but for vertical sizing.
+                </dt>
               </span>
               <span class="dl-item">
                 <dd>vmin</dd>
@@ -96,10 +117,10 @@
             <div class="sample-block" style="width: 25vh">
               <p>25% of viewport height</p>
             </div>
-            <div class="sample-block" style="width: 25vmin;">
+            <div class="sample-block" style="width: 25vmin">
               <p>25% of smaller dimension of viewport</p>
             </div>
-            <div class="sample-block" style="width: 25vmax;">
+            <div class="sample-block" style="width: 25vmax">
               <p>25% of larger dimension of viewport</p>
             </div>
           </section>
@@ -108,12 +129,21 @@
             <dl>
               <span class="dl-item">
                 <dd>rem</dd>
-                <dt>relative to the font-size of the root (browser) font-size - usually 16px. Best practice for font-sizes other than ones that are intentionally relative to another font-size (in which case, use em)</dt>
+                <dt>
+                  relative to the font-size of the root (browser) font-size -
+                  usually 16px. Best practice for font-sizes other than ones
+                  that are intentionally relative to another font-size (in which
+                  case, use em)
+                </dt>
               </span>
               <span class="dl-item">
                 <dd>em</dd>
-                <dt>relative to the font-size of the element. Good for reusable elements that may have different parent font sizes, as well as for layout spacing that should be relative to text.</dt>
-              </span>        
+                <dt>
+                  relative to the font-size of the element. Good for reusable
+                  elements that may have different parent font sizes, as well as
+                  for layout spacing that should be relative to text.
+                </dt>
+              </span>
             </dl>
             <h4>Examples</h4>
             <div class="font-examples">
@@ -121,14 +151,13 @@
                 1rem: The quick brown fox jumps over the lazy dog
               </p>
               <p style="font-size: 1em">
-                1em with body font (1rem) as parent: The quick brown fox jumps over the lazy dog
+                1em with body font (1rem) as parent: The quick brown fox jumps
+                over the lazy dog
               </p>
               <p style="font-size: 1.5rem">
                 1.5rem: The quick brown fox jumps over the lazy dog
                 <br />
-                <span style="font-size: 1em">
-                  1em with 1.5rem parent
-                </span>
+                <span style="font-size: 1em"> 1em with 1.5rem parent </span>
               </p>
               <p style="font-size: 16px">
                 16px: The quick brown fox jumps over the lazy dog

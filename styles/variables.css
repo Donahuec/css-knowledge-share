@@ -38,32 +38,32 @@
 
 :root {
   /* Sizing */
-  --s1: 0.25rem;
   /* 4px */
-  --s2: 0.5rem;
+  --s1: 0.25rem;
   /* 8px */
-  --s3: 0.75rem;
+  --s2: 0.5rem;
   /* 12px */
-  --s4: 1rem;
+  --s3: 0.75rem;
   /* 16px */
-  --s5: 1.5rem;
+  --s4: 1rem;
   /* 24px */
-  --s6: 2rem;
+  --s5: 1.5rem;
   /* 32px */
-  --s7: 3rem;
+  --s6: 2rem;
   /* 48px */
-  --s8: 4rem;
+  --s7: 3rem;
   /* 64px */
-  --s9: 6rem;
+  --s8: 4rem;
   /* 96px */
-  --s10: 8rem;
+  --s9: 6rem;
   /* 128px */
-  --s11: 16rem;
+  --s10: 8rem;
   /* 256px */
-  --s12: 24rem;
+  --s11: 16rem;
   /* 384px */
-  --s13: 32rem;
+  --s12: 24rem;
   /* 512px */
+  --s13: 32rem;
 
   /* Colors */
   --white: hsl(0, 0%, 100%);
@@ -87,48 +87,61 @@
   --error: var(--nord11);
   --error-hsl: var(--nord11-hsl);
 
-  --background: var(--nord0);
-  --on-background: var(--nord6);
-  --surface: var(--nord1);
-  --on-surface: var(--nord6);
-  --surface-variant: var(--nord2);
-  --on-surface-variant: var(--nord6);
-  --muted: var(--nord3);
-  --muted-hsl: var(--nord3-hsl);
-  --muted-text: var(--nord4);
-  --accent-text: var(--primary);
+  /* Dark Theme */
+  --dark-theme-background: var(--nord0);
+  --dark-theme-body-text: var(--nord6);
+  --dark-theme-surface: var(--nord1);
+  --dark-theme-surface-variant: var(--nord2);
+  --dark-theme-muted: var(--nord3);
+  --dark-theme-muted-hsl: var(--nord3-hsl);
+  --dark-theme-muted-text: var(--nord4);
+  --dark-theme-accent-text: var(--primary);
 
-  /* page preference is "dark" */
+  /* Light Theme */
+  --light-theme-background: var(--nord4);
+  --light-theme-body-text: var(--nord0);
+  --light-theme-surface: var(--nord5);
+  --light-theme-surface-variant: var(--nord6);
+  --light-theme-muted-hsl: var(--nord3-hsl);
+  --light-theme-muted: hsla(var(--light-theme-muted-hsl) / 0.5);
+  --light-theme-muted-text: var(--nord1);
+  --light-theme-accent-text: hsl(193, 81%, 32%);
+
+  --background: var(--dark-theme-background);
+  --body-text: var(--dark-theme-body-text);
+  --surface: var(--dark-theme-surface);
+  --surface-variant: var(--dark-theme-surface-variant);
+  --muted: var(--dark-theme-muted);
+  --muted-hsl: var(--dark-theme-muted-hsl);
+  --muted-text: var(--dark-theme-muted-text);
+  --accent-text: var(--dark-theme-accent-text);
+
+  /* page preference is "light" */
   /* https://www.smashingmagazine.com/2024/03/setting-persisting-color-scheme-preferences-css-javascript/ */
   &:has(#color-scheme option[value="light"]:checked) {
     --color-scheme: light;
-    --background: var(--nord4);
-    --on-background: var(--nord0);
-    --surface: var(--nord6);
-    --on-surface: var(--nord0);
-    --surface-variant: var(--nord5);
-    --on-surface-variant: var(--nord0);
-    --muted: var(--nord0);
-    --muted-hsl: var(--nord0-hsl);
-    --muted-text: var(--nord1);
-    --accent-text: hsl(193, 81%, 32%);
+    --background: var(--light-theme-background);
+    --body-text: var(--light-theme-body-text);
+    --surface: var(--light-theme-surface);
+    --surface-variant: var(--light-theme-surface-variant);
+    --muted: var(--light-theme-muted);
+    --muted-hsl: var(--light-theme-muted-hsl);
+    --muted-text: var(--light-theme-muted-text);
+    --accent-text: var(--light-theme-accent-text);
   }
 
   @media (prefers-color-scheme: light) {
     &:has(#color-scheme option[value="system"]:checked) {
-        /*Light Theme*/
+      /*Light Theme*/
       --color-scheme: light;
-      --background: var(--nord4);
-      --on-background: var(--nord0);
-      --surface: var(--nord6);
-      --on-surface: var(--nord0);
-      --surface-variant: var(--nord5);
-      --on-surface-variant: var(--nord0);
-      --muted: var(--nord0);
-      --muted-hsl: var(--nord0-hsl);
-      --muted-text: var(--nord1);
-      --accent-text: hsl(193, 81%, 32%);
-      }
+      --background: var(--light-theme-background);
+      --body-text: var(--light-theme-body-text);
+      --surface: var(--light-theme-surface);
+      --surface-variant: var(--light-theme-surface-variant);
+      --muted: var(--light-theme-muted);
+      --muted-hsl: var(--light-theme-muted-hsl);
+      --muted-text: var(--light-theme-muted-text);
+      --accent-text: var(--light-theme-accent-text);
+    }
   }
 }
-
