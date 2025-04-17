@@ -1,72 +1,74 @@
 <!-- Page showing example usages of css grid -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>CSS Knowledge Share - Sizing</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="./styles/grid-examples.css" />
-  </head>
 
-  <body>
-    <div class="layout-container">
-      <header>
-        <nav class="layout-nav">
-          <p>CSS Knowledge Share</p>
-          <a href="./index.html">Home</a>
-          <a href="https://github.com/Donahuec/css-knowledge-share">GitHub</a>
-          <div class="select">
-            <select id="color-scheme">
-              <option value="system" selected>System</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </div>
-        </nav>
-        <div class="layout-header">
-          <h1>Grid Layout</h1>
-          <nav>
-            <a href="./index.html">Back to Index</a>
-          </nav>
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Knowledge Share - Sizing</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles/grid-examples.css" />
+</head>
+
+<body>
+  <div class="layout-container">
+    <header>
+      <nav class="layout-nav">
+        <p>CSS Knowledge Share</p>
+        <a href="./index.html">Home</a>
+        <a href="https://github.com/Donahuec/css-knowledge-share">GitHub</a>
+        <div class="select">
+          <select id="color-scheme">
+            <option value="system" selected>System</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
         </div>
-      </header>
-      <main class="layout-main">
-        <section>
-          <h2 class="decorated-header" #resources>Resources</h2>
-          <ul>
-            <li>
-              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout">MDN - CSS Grid Layout</a>
-            </li>
-            <li>
-              <a href="https://www.joshwcomeau.com/css/interactive-guide-to-grid/"> Josh Comeau - Interactive Guide to Grid</a>
-            </li>
-            
-            <li>
-              <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS Tricks - Complete Guide to Grid</a>
-            </li>
-            <li>
-              <a href="https://gridbyexample.com/learn/">Grid by Example - Learn Grid</a>
-            </li>
-            <li>
-              <a href="https://learncssgrid.com/">Learn CSS Grid</a>
-            </li>
-            <li>
-              <a href="https://cssgridgarden.com/">CSS Grid Garden</a>
-            </li>
-          </ul>
-        </section>
-        <section class="section-block">
-          <h2>"Holy Grail" layout - Two Ways</h2>
-          <div class="holy-grail-grid-container-areas">
-            <div class="grid-item header">Header</div>
-            <div class="grid-item left-sidebar">Left Sidebar</div>
-            <div class="grid-item main-content">Main Content</div>
-            <div class="grid-item right-sidebar">Right Sidebar</div>
-            <div class="grid-item footer">Footer</div>
-          </div>
-          <details>
-            <summary>CSS - Explicit Grid Lines</summary>
-            <pre><code>
+      </nav>
+      <div class="layout-header">
+        <h1>Grid Layout</h1>
+        <nav>
+          <a href="./index.html">Back to Index</a>
+        </nav>
+      </div>
+    </header>
+    <main class="layout-main">
+      <section>
+        <h2 class="decorated-header" #resources>Resources</h2>
+        <ul>
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout">MDN - CSS Grid Layout</a>
+          </li>
+          <li>
+            <a href="https://www.joshwcomeau.com/css/interactive-guide-to-grid/"> Josh Comeau - Interactive Guide to
+              Grid</a>
+          </li>
+
+          <li>
+            <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS Tricks - Complete Guide to Grid</a>
+          </li>
+          <li>
+            <a href="https://gridbyexample.com/learn/">Grid by Example - Learn Grid</a>
+          </li>
+          <li>
+            <a href="https://learncssgrid.com/">Learn CSS Grid</a>
+          </li>
+          <li>
+            <a href="https://cssgridgarden.com/">CSS Grid Garden</a>
+          </li>
+        </ul>
+      </section>
+      <section class="section-block">
+        <h2>"Holy Grail" layout - Two Ways</h2>
+        <div class="holy-grail-grid-container-areas">
+          <div class="grid-item header">Header</div>
+          <div class="grid-item left-sidebar">Left Sidebar</div>
+          <div class="grid-item main-content">Main Content</div>
+          <div class="grid-item right-sidebar">Right Sidebar</div>
+          <div class="grid-item footer">Footer</div>
+        </div>
+        <details>
+          <summary>CSS - Explicit Grid Lines</summary>
+          <pre><code>
 .holy-grail-grid-container {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
@@ -90,10 +92,10 @@
     }
 }
             </code></pre>
-          </details>
-          <details>
-            <summary>CSS - Using Grid Areas</summary>
-            <pre><code>
+        </details>
+        <details>
+          <summary>CSS - Using Grid Areas</summary>
+          <pre><code>
 .holy-grail-grid-container-areas {
   display: grid;
   grid-template-areas:
@@ -121,10 +123,10 @@
   }
 }
             </code></pre>
-          </details>
-          <details>
-            <summary>HTML</summary>
-            <pre><code>
+        </details>
+        <details>
+          <summary>HTML</summary>
+          <pre><code>
 &lt;div class=&quot;holy-grail-grid-container&quot;&gt;
     &lt;div class=&quot;grid-item header&quot;&gt;Header&lt;/div&gt;
     &lt;div class=&quot;grid-item left-sidebar&quot;&gt;Left Sidebar&lt;/div&gt;
@@ -133,37 +135,37 @@
     &lt;div class=&quot;grid-item footer&quot;&gt;Footer&lt;/div&gt;
 &lt;/div&gt;
         </code></pre>
-          </details>
-        </section>
-        <section class="section-block">
-          <h2>Simple grid layout</h2>
-          <div class="simple-grid-container">
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-          </div>
-          <details>
-            <summary>CSS</summary>
-            <pre><code>
+        </details>
+      </section>
+      <section class="section-block">
+        <h2>Simple grid layout</h2>
+        <div class="simple-grid-container">
+          <div class="grid-item">1</div>
+          <div class="grid-item">2</div>
+          <div class="grid-item">3</div>
+          <div class="grid-item">1</div>
+          <div class="grid-item">2</div>
+          <div class="grid-item">3</div>
+          <div class="grid-item">1</div>
+          <div class="grid-item">2</div>
+          <div class="grid-item">3</div>
+          <div class="grid-item">1</div>
+          <div class="grid-item">2</div>
+          <div class="grid-item">3</div>
+        </div>
+        <details>
+          <summary>CSS</summary>
+          <pre><code>
 .simple-grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
             </code></pre>
-          </details>
-          <details>
-            <summary>HTML</summary>
-            <pre><code>
+        </details>
+        <details>
+          <summary>HTML</summary>
+          <pre><code>
 &lt;div class=&quot;simple-grid-container&quot;&gt;
     &lt;div class=&quot;grid-item&quot;&gt;1&lt;/div&gt;
     &lt;div class=&quot;grid-item&quot;&gt;2&lt;/div&gt;
@@ -171,41 +173,41 @@
     &lt;...&gt;
 &lt;/div&gt;
         </code></pre>
-          </details>
-        </section>
-        <section class="section-block">
-          <h2>Fluid Grid</h2>
-          <div class="fluid-grid-container">
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">4</div>
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">4</div>
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">4</div>
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">4</div>
-          </div>
-          <details>
-            <summary>CSS</summary>
-            <pre><code>
+        </details>
+      </section>
+      <section class="section-block">
+        <h2>Fluid Grid</h2>
+        <div class="fluid-grid-container">
+          <div class="grid-item">1</div>
+          <div class="grid-item">2</div>
+          <div class="grid-item">3</div>
+          <div class="grid-item">4</div>
+          <div class="grid-item">1</div>
+          <div class="grid-item">2</div>
+          <div class="grid-item">3</div>
+          <div class="grid-item">4</div>
+          <div class="grid-item">1</div>
+          <div class="grid-item">2</div>
+          <div class="grid-item">3</div>
+          <div class="grid-item">4</div>
+          <div class="grid-item">1</div>
+          <div class="grid-item">2</div>
+          <div class="grid-item">3</div>
+          <div class="grid-item">4</div>
+        </div>
+        <details>
+          <summary>CSS</summary>
+          <pre><code>
 .fluid-grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
 }
             </code></pre>
-          </details>
-          <details>
-            <summary>HTML</summary>
-            <pre><code>
+        </details>
+        <details>
+          <summary>HTML</summary>
+          <pre><code>
 &lt;div class=&quot;fluid-grid-container&quot;&gt;
     &lt;div class=&quot;grid-item&quot;&gt;1&lt;/div&gt;
     &lt;div class=&quot;grid-item&quot;&gt;2&lt;/div&gt;
@@ -214,30 +216,30 @@
     &lt;...&gt;
 &lt;/div&gt;
         </code></pre>
-          </details>
-        </section>
-        <section class="section-block">
-          <h2>Complex Layout</h2>
-          <div class="complex-grid-container">
-            <div class="grid-item section1">Section 1</div>
-            <div class="grid-item section2">Section 2</div>
-            <div class="grid-item section3">Section 3</div>
-            <div class="grid-item section4 sub-grid">
-              <div class="sub-item">Subgrid 4</div>
-              <div class="sub-item">Subgrid 4</div>
-            </div>
-            <div class="grid-item section5">Section 5</div>
-            <div class="grid-item section6">Section 6</div>
-            <div class="grid-item section7">Section 7</div>
-            <div class="grid-item section8 sub-grid">
-              <div class="sub-item">Subgrid 8</div>
-              <div class="sub-item">Subgrid 8</div>
-              <div class="sub-item">Subgrid 8</div>
-            </div>
+        </details>
+      </section>
+      <section class="section-block">
+        <h2>Complex Layout</h2>
+        <div class="complex-grid-container">
+          <div class="grid-item section1">Section 1</div>
+          <div class="grid-item section2">Section 2</div>
+          <div class="grid-item section3">Section 3</div>
+          <div class="grid-item section4 sub-grid">
+            <div class="sub-item">Subgrid 4</div>
+            <div class="sub-item">Subgrid 4</div>
           </div>
-          <details>
-            <summary>CSS</summary>
-            <pre><code>
+          <div class="grid-item section5">Section 5</div>
+          <div class="grid-item section6">Section 6</div>
+          <div class="grid-item section7">Section 7</div>
+          <div class="grid-item section8 sub-grid">
+            <div class="sub-item">Subgrid 8</div>
+            <div class="sub-item">Subgrid 8</div>
+            <div class="sub-item">Subgrid 8</div>
+          </div>
+        </div>
+        <details>
+          <summary>CSS</summary>
+          <pre><code>
 .complex-grid-container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -306,10 +308,10 @@
 
 }
             </code></pre>
-          </details>
-          <details>
-            <summary>HTML</summary>
-            <pre><code>
+        </details>
+        <details>
+          <summary>HTML</summary>
+          <pre><code>
 &lt;div class=&quot;complex-grid-container&quot;&gt;
     &lt;div class=&quot;grid-item section1&quot;&gt;Section 1&lt;/div&gt;
     &lt;div class=&quot;grid-item section2&quot;&gt;Section 2&lt;/div&gt;
@@ -328,70 +330,70 @@
     &lt;/div&gt;
 &lt;/div&gt;
         </code></pre>
-          </details>
-        </section>
+        </details>
+      </section>
 
-        <section class="section-block">
-          <h2>Information Card Grid with Subgrid</h2>
-          <div class="info-card-grid-container">
-            <div class="grid-item card">
-              <h3 class="card-header">Cats Really are the Coolest</h3>
-              <p class="card-subheader">And Other Obvious Opinions</p>
-              <p class="card-content">
-                We're just going to Lorem Ipsum the rest... But Actually Cat
-                Ipsum
-              </p>
-            </div>
-            <div class="grid-item card">
-              <h3 class="card-header">Cats</h3>
-              <p class="card-subheader">Filler Content is Hard</p>
-              <p class="card-content">
-                Instead of drinking water from the cat bowl, make sure to steal
-                water from the toilet why dog in house? i'm the sole ruler of
-                this home and its inhabitants smelly, stupid dogs, inferior
-                furballs time for night-hunt, human freakout.
-              </p>
-            </div>
-            <div class="grid-item card">
-              <h3 class="card-header">Fun Facts About CSS!</h3>
-              <p class="card-subheader">The Fact is it is Fun!</p>
-              <p class="card-content">
-                Attempt to leap between furniture but woefully miscalibrate and
-                bellyflop onto the floor; what's your problem? i meant to do
-                that now i shall wash myself intently
-              </p>
-            </div>
-            <div class="grid-item card">
-              <h3 class="card-header">This is a Really Long Title</h3>
-              <p class="card-subheader">Yeet</p>
-              <p class="card-content">
-                purrr purr littel cat, little cat purr purr so has closed eyes
-                but still sees you i like to spend my days sleeping
-              </p>
-            </div>
-            <div class="grid-item card">
-              <h3 class="card-header">Cats Cats Cats</h3>
-              <p class="card-subheader">Cats?</p>
-              <p class="card-content">Why can't i catch that stupid red dot</p>
-            </div>
-            <div class="grid-item card">
-              <h3 class="card-header">More Text Here</h3>
-              <p class="card-subheader">Yeet Again</p>
-              <p class="card-content">
-                Morning beauty routine of licking self humans,humans, humans oh
-                how much they love us felines we are the center of attention
-                they feed, they clean so Gate keepers of hell
-              </p>
-            </div>
+      <section class="section-block">
+        <h2>Information Card Grid with Subgrid</h2>
+        <div class="info-card-grid-container">
+          <div class="grid-item card">
+            <h3 class="card-header">Cats Really are the Coolest</h3>
+            <p class="card-subheader">And Other Obvious Opinions</p>
+            <p class="card-content">
+              We're just going to Lorem Ipsum the rest... But Actually Cat
+              Ipsum
+            </p>
           </div>
-          <details>
-            <summary>CSS</summary>
-            <pre><code>
+          <div class="grid-item card">
+            <h3 class="card-header">Cats</h3>
+            <p class="card-subheader">Filler Content is Hard</p>
+            <p class="card-content">
+              Instead of drinking water from the cat bowl, make sure to steal
+              water from the toilet why dog in house? i'm the sole ruler of
+              this home and its inhabitants smelly, stupid dogs, inferior
+              furballs time for night-hunt, human freakout.
+            </p>
+          </div>
+          <div class="grid-item card">
+            <h3 class="card-header">Fun Facts About CSS!</h3>
+            <p class="card-subheader">The Fact is it is Fun!</p>
+            <p class="card-content">
+              Attempt to leap between furniture but woefully miscalibrate and
+              bellyflop onto the floor; what's your problem? i meant to do
+              that now i shall wash myself intently
+            </p>
+          </div>
+          <div class="grid-item card">
+            <h3 class="card-header">This is a Really Long Title</h3>
+            <p class="card-subheader">Yeet</p>
+            <p class="card-content">
+              purrr purr littel cat, little cat purr purr so has closed eyes
+              but still sees you i like to spend my days sleeping
+            </p>
+          </div>
+          <div class="grid-item card">
+            <h3 class="card-header">Cats Cats Cats</h3>
+            <p class="card-subheader">Cats?</p>
+            <p class="card-content">Why can't i catch that stupid red dot</p>
+          </div>
+          <div class="grid-item card">
+            <h3 class="card-header">More Text Here</h3>
+            <p class="card-subheader">Yeet Again</p>
+            <p class="card-content">
+              Morning beauty routine of licking self humans,humans, humans oh
+              how much they love us felines we are the center of attention
+              they feed, they clean so Gate keepers of hell
+            </p>
+          </div>
+        </div>
+        <details>
+          <summary>CSS</summary>
+          <pre><code>
 .info-card-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-rows: auto auto 1fr;
-  gap: var(--s2);
+  gap: var(--spacing-small);
 
   .card {
     display: grid;
@@ -408,10 +410,10 @@
   }
 }
             </code></pre>
-          </details>
-          <details>
-            <summary>HTML</summary>
-            <pre><code>
+        </details>
+        <details>
+          <summary>HTML</summary>
+          <pre><code>
 &lt;div class=&quot;info-card-grid-container&quot;&gt;
   &lt;div class=&quot;grid-item card&quot;&gt;
     &lt;h3 class=&quot;card-header&quot;&gt;Cats Really are the Coolest&lt;/h3&gt;
@@ -424,11 +426,12 @@
   &lt;...&gt;
 &lt;/div&gt;
         </code></pre>
-          </details>
-        </section>
-      </main>
-    </div>
+        </details>
+      </section>
+    </main>
+  </div>
 
-    <script src="./global.scripts.js"></script>
-  </body>
+  <script src="./global.scripts.js"></script>
+</body>
+
 </html>

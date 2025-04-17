@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: auto 1fr auto;
-  gap: var(--s2);
+  gap: var(--spacing-small);
   .header {
     grid-column: 1 / -1;
   }
@@ -32,7 +32,7 @@
     "left-sidebar main-content right-sidebar"
     "footer footer footer";
   grid-template-columns: 1fr 3fr 1fr;
-  gap: var(--s2);
+  gap: var(--spacing-small);
   .header {
     grid-area: header;
   }
@@ -55,19 +55,19 @@
 .simple-grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--s2);
+  gap: var(--spacing-small);
 }
 
 .fluid-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--s2);
+  gap: var(--spacing-small);
 }
 
 .complex-grid-container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: var(--s2);
+  gap: var(--spacing-small);
   .section1,
   .section4,
   .section8 {
@@ -92,7 +92,7 @@
 
   .sub-item {
     background-color: var(--nord15);
-    gap: var(--s3);
+    gap: var(--spacing-medium);
   }
 
   .section4 .sub-item {
@@ -132,7 +132,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-rows: auto auto 1fr;
-  gap: var(--s2);
+  gap: var(--spacing-small);
 
   .card {
     display: grid;
@@ -150,7 +150,7 @@
 }
 
 .grid-item {
-  padding: var(--s4);
+  padding: var(--spacing-medium);
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: var(--nord0);

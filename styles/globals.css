@@ -4,9 +4,3 @@ html {
   background-color: var(--background);
 }
 
-.decorated-header {
-  padding-block: var(--s2);
-  margin-block: var(--s2);
-  border-bottom: 3px solid var(--primary);
-}
-

@@ -3,9 +3,8 @@ https://moderncss.dev/custom-select-styles-with-pure-css/
  */
 .select {
   background-color: var(--background);
-  border: none;
-  border-radius: var(--s1);
-  padding: var(--s2);
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-small);
   color: var(--body-text);
   border: 1px solid var(--muted);
   cursor: pointer;
@@ -14,7 +13,7 @@ https://moderncss.dev/custom-select-styles-with-pure-css/
   grid-template-areas: "select";
   align-items: center;
   &:focus-within {
-    outline: 2px solid var(--primary);
+    outline: var(--focus-outline);
   }
   select {
     background-color: var(--background);
@@ -38,25 +37,24 @@ select,
 pre {
   background-color: var(--background);
   font-family: var(--monospace-font);
-  border-radius: 4px;
-  overflow-x: auto;
-  border-left: solid 3px;
+  border-radius: var(--border-radius-medium);
   max-width: 100%;
-  border-color: var(--primary);
-  padding-inline: var(--s6);
-  padding-block: var(--s3);
+  overflow-x: auto;
+  border-left: var(--decorative-border);
+  padding-inline: var(--spacing-large);
+  padding-block: var(--spacing-medium);
 }
 
 details {
-  padding: var(--s3);
+  padding: var(--spacing-medium);
   background-color: var(--surface-variant);
-  border-radius: var(--s2);
-  margin-block: var(--s2);
+  border-radius: var(--border-radius-medium);
+  margin-block: var(--spacing-small);
   max-width: 100%;
 }
 
 summary {
   cursor: pointer;
   font-weight: bold;
-  padding: var(--s1);
+  padding: var(--spacing-extra-small);
 }

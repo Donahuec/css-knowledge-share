@@ -1,204 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>CSS Knowledge Share - Sizing</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      dl {
-        list-style: none;
-      }
-      .dl-item {
-        display: flex;
-      }
-      dd {
-        font-weight: bold;
-        min-width: var(--s8);
-      }
-      dt {
-        margin-bottom: 1rem;
-      }
 
-      .sample-block {
-        padding: var(--s2);
-        background-color: var(--primary);
-        color: var(--nord0);
-        margin-block: var(--s2);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Knowledge Share - Sizing</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    dl {
+      list-style: none;
+    }
 
-      .font-examples {
-        display: flex;
-        flex-direction: column;
-        gap: var(--s2);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="layout-container">
-      <header>
-        <nav class="layout-nav">
-          <p>CSS Knowledge Share</p>
-          <a href="./index.html">Home</a>
-          <a href="https://github.com/Donahuec/css-knowledge-share">GitHub</a>
-          <div class="select">
-            <select id="color-scheme">
-              <option value="system" selected>System</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </div>
-        </nav>
-        <div class="layout-header">
-          <h1>Sizing</h1>
-          <nav>
-            <a href="./index.html">Back to Index</a>
-          </nav>
+    .dl-item {
+      display: flex;
+    }
+
+    dd {
+      font-weight: bold;
+      min-width: var(--spacing-extra-large);
+    }
+
+    dt {
+      margin-bottom: 1rem;
+    }
+
+    .sample-block {
+      padding: var(--spacing-small);
+      background-color: var(--primary);
+      color: var(--nord0);
+      margin-block: var(--spacing-small);
+    }
+
+    .font-examples {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-small);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout-container">
+    <header>
+      <nav class="layout-nav">
+        <p>CSS Knowledge Share</p>
+        <a href="./index.html">Home</a>
+        <a href="https://github.com/Donahuec/css-knowledge-share">GitHub</a>
+        <div class="select">
+          <select id="color-scheme">
+            <option value="system" selected>System</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
         </div>
-      </header>
-      <main class="layout-main">
-        <section>
-          <h2 class="decorated-header" #resources>Resources</h2>
-          <ul>
-            <li>
-              <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units#numbers_lengths_and_percentages">
-                MDN - CSS Values and Units
-              </a>
-            </li>
-            <li>
-              <a href="https://www.w3schools.com/cssref/css_units.php">W3Schools - CSS Units</a>
-            </li>
-            
-            <li>
-              <a href="https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/">Josh Comeau - The Surprising Truth About Pixels and Accessibility</a>
-            </li>
-          </ul>
-        </section>
-        <section #units>
-          <h2 class="decorated-header">Units</h2>
-          <section class="section-block">
-            <h3>Absolute Units</h3>
-            <dl>
-              <span class="dl-item">
-                <dd>px</dd>
-                <dt>
-                  pixels, standard static unit. Good for instances where a set
-                  size is required. Also frequently used for spacing and smaller
-                  details that don't need to adapt.
-                </dt>
-              </span>
-            </dl>
-          </section>
-          <section class="section-block">
-            <h3>Relative Units</h3>
-            <dl>
-              <span class="dl-item">
-                <dd>%</dd>
-                <dt>
-                  relative to the parent element. Good all-arounder for for
-                  laying out elements and flexible design.
-                </dt>
-              </span>
-              <span class="dl-item">
-                <dd>vw</dd>
-                <dt>
-                  relative to 1% of the width of the viewport. Commonly used for
-                  sizing top-level elements (i.e. body, main), or elements that
-                  break out of the standard page flow (i.e. modals, overlays).
-                </dt>
-              </span>
-              <span class="dl-item">
-                <dd>vh</dd>
-                <dt>
-                  relative to 1% of the height of the viewport. Similar to vw,
-                  but for vertical sizing.
-                </dt>
-              </span>
-              <span class="dl-item">
-                <dd>vmin</dd>
-                <dt>relative to 1% of the viewport's smaller dimension</dt>
-              </span>
-              <span class="dl-item">
-                <dd>vmax</dd>
-                <dt>relative to 1% of the viewport's larger dimension</dt>
-              </span>
-            </dl>
-            <div class="sample-block" style="width: 100%">
-              <p>100% of the parent element</p>
-            </div>
-            <div class="sample-block" style="width: 25%">
-              <p>25% of the parent element</p>
-            </div>
-            <div class="sample-block" style="width: 25vw">
-              <p>25% of viewport width</p>
-            </div>
-            <div class="sample-block" style="width: 25vh">
-              <p>25% of viewport height</p>
-            </div>
-            <div class="sample-block" style="width: 25vmin">
-              <p>25% of smaller dimension of viewport</p>
-            </div>
-            <div class="sample-block" style="width: 25vmax">
-              <p>25% of larger dimension of viewport</p>
-            </div>
-          </section>
-          <section class="section-block">
-            <h3>Typographic Units</h3>
-            <dl>
-              <span class="dl-item">
-                <dd>rem</dd>
-                <dt>
-                  relative to the font-size of the root (browser) font-size -
-                  usually 16px. Best practice for font-sizes other than ones
-                  that are intentionally relative to another font-size (in which
-                  case, use em)
-                </dt>
-              </span>
-              <span class="dl-item">
-                <dd>em</dd>
-                <dt>
-                  relative to the font-size of the element. Good for reusable
-                  elements that may have different parent font sizes, as well as
-                  for layout spacing that should be relative to text.
-                </dt>
-              </span>
-            </dl>
+      </nav>
+      <div class="layout-header">
+        <h1>Sizing</h1>
+        <nav>
+          <a href="./index.html">Back to Index</a>
+        </nav>
+      </div>
+    </header>
+    <main class="layout-main">
+      <section>
+        <h2 class="decorated-header" #resources>Resources</h2>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units#numbers_lengths_and_percentages">
+              MDN - CSS Values and Units
+            </a>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/cssref/css_units.php">W3Schools - CSS Units</a>
+          </li>
+
+          <li>
+            <a href="https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/">Josh Comeau - The
+              Surprising Truth About Pixels and Accessibility</a>
+          </li>
+        </ul>
+      </section>
+      <section #units>
+        <h2 class="decorated-header">Units</h2>
+        <section class="section-block">
+          <h3>Absolute Units</h3>
+          <dl>
             <span class="dl-item">
-              <dd>ch</dd>
+              <dd>px</dd>
               <dt>
-                relative to the size of one character in the element's font, specifically the width of the "0" character. Good for sizing elements that
-                should be relative to the text inside them, such as input fields.
+                pixels, standard static unit. Good for instances where a set
+                size is required. Also frequently used for spacing and smaller
+                details that don't need to adapt.
               </dt>
             </span>
-            <h4>Examples</h4>
-            <div class="font-examples">
-              <p style="font-size: 1rem">
-                1rem: The quick brown fox jumps over the lazy dog
-              </p>
-              <p style="font-size: 1em">
-                1em with body font (1rem) as parent: The quick brown fox jumps
-                over the lazy dog
-              </p>
-              <p style="font-size: 1.5rem">
-                1.5rem: The quick brown fox jumps over the lazy dog
-                <br />
-                <span style="font-size: 1em"> 1em with 1.5rem parent </span>
-              </p>
-              <p style="font-size: 16px">
-                16px: The quick brown fox jumps over the lazy dog
-              </p>
-            </div>
-            <div> 
-              <label>10ch input: </label>
-              <input
-                type="text"
-                style="width: 10ch"
-                placeholder="10ch input"  />
-            </div>
-          </section>
+          </dl>
         </section>
-        
-      </main>
-    </div>
-    <script src="./global.scripts.js"></script>
-  </body>
+        <section class="section-block">
+          <h3>Relative Units</h3>
+          <dl>
+            <span class="dl-item">
+              <dd>%</dd>
+              <dt>
+                relative to the parent element. Good all-arounder for for
+                laying out elements and flexible design.
+              </dt>
+            </span>
+            <span class="dl-item">
+              <dd>vw</dd>
+              <dt>
+                relative to 1% of the width of the viewport. Commonly used for
+                sizing top-level elements (i.e. body, main), or elements that
+                break out of the standard page flow (i.e. modals, overlays).
+              </dt>
+            </span>
+            <span class="dl-item">
+              <dd>vh</dd>
+              <dt>
+                relative to 1% of the height of the viewport. Similar to vw,
+                but for vertical sizing.
+              </dt>
+            </span>
+            <span class="dl-item">
+              <dd>vmin</dd>
+              <dt>relative to 1% of the viewport's smaller dimension</dt>
+            </span>
+            <span class="dl-item">
+              <dd>vmax</dd>
+              <dt>relative to 1% of the viewport's larger dimension</dt>
+            </span>
+          </dl>
+          <div class="sample-block" style="width: 100%">
+            <p>100% of the parent element</p>
+          </div>
+          <div class="sample-block" style="width: 25%">
+            <p>25% of the parent element</p>
+          </div>
+          <div class="sample-block" style="width: 25vw">
+            <p>25% of viewport width</p>
+          </div>
+          <div class="sample-block" style="width: 25vh">
+            <p>25% of viewport height</p>
+          </div>
+          <div class="sample-block" style="width: 25vmin">
+            <p>25% of smaller dimension of viewport</p>
+          </div>
+          <div class="sample-block" style="width: 25vmax">
+            <p>25% of larger dimension of viewport</p>
+          </div>
+        </section>
+        <section class="section-block">
+          <h3>Typographic Units</h3>
+          <dl>
+            <span class="dl-item">
+              <dd>rem</dd>
+              <dt>
+                relative to the font-size of the root (browser) font-size -
+                usually 16px. Best practice for font-sizes other than ones
+                that are intentionally relative to another font-size (in which
+                case, use em)
+              </dt>
+            </span>
+            <span class="dl-item">
+              <dd>em</dd>
+              <dt>
+                relative to the font-size of the element. Good for reusable
+                elements that may have different parent font sizes, as well as
+                for layout spacing that should be relative to text.
+              </dt>
+            </span>
+          </dl>
+          <span class="dl-item">
+            <dd>ch</dd>
+            <dt>
+              relative to the size of one character in the element's font, specifically the width of the "0" character.
+              Good for sizing elements that
+              should be relative to the text inside them, such as input fields.
+            </dt>
+          </span>
+          <h4>Examples</h4>
+          <div class="font-examples">
+            <p style="font-size: 1rem">
+              1rem: The quick brown fox jumps over the lazy dog
+            </p>
+            <p style="font-size: 1em">
+              1em with body font (1rem) as parent: The quick brown fox jumps
+              over the lazy dog
+            </p>
+            <p style="font-size: 1.5rem">
+              1.5rem: The quick brown fox jumps over the lazy dog
+              <br />
+              <span style="font-size: 1em"> 1em with 1.5rem parent </span>
+            </p>
+            <p style="font-size: 16px">
+              16px: The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+          <div>
+            <label>10ch input: </label>
+            <input type="text" style="width: 10ch" placeholder="10ch input" />
+          </div>
+        </section>
+      </section>
+
+    </main>
+  </div>
+  <script src="./global.scripts.js"></script>
+</body>
+
 </html>

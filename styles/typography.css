@@ -70,8 +70,13 @@ a {
   }
 
   &:focus-visible {
-    outline-color: var(--primary);
-    outline: 2px solid;
+    outline: var(--focus-outline);
     outline-offset: 0.25em;
   }
+}
+
+.decorated-header {
+  padding-block: var(--spacing-small);
+  margin-block: var(--spacing-small);
+  border-bottom: var( --decorative-border);
 }

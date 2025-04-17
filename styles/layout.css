@@ -1,21 +1,21 @@
 .layout-container {
   min-height: 100vh;
   margin-inline: clamp(
-    var(--min-edge, var(--s4)),
+    var(--min-edge, var(--spacing-medium)),
     var(--edge-size, 15%),
     var(--s11)
   );
-  padding-inline: var(--layout-padding, var(--s9));
-  padding-block: var(--s7);
+  padding-inline: var(--layout-padding, var(--spacing-extra-large));
+  padding-block: var(--spacing-large);
   display: grid;
   grid-template-areas:
     "nav"
     "header"
     "main";
   grid-template-rows: min-content min-content 1fr;
-  gap: var(--s4);
+  gap: var(--spacing-medium);
   background-color: var(--surface);
-  box-shadow: 0 0 var(--s4) rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 var(--spacing-medium) rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 1200px) {
@@ -27,14 +27,14 @@
 @media screen and (max-width: 768px) {
   :root {
     --edge-size: 5%;
-    --layout-padding: var(--s7);
+    --layout-padding: var(--spacing-large);
   }
 }
 @media screen and (max-width: 564px) {
   :root {
     --edge-size: 0px;
     --min-edge: 0px;
-    --layout-padding: var(--s5);
+    --layout-padding: var(--spacing-medium);
   }
 }
 
@@ -42,7 +42,7 @@
   grid-area: nav;
   width: 100%;
   display: flex;
-  gap: var(--s5);
+  gap: var(--spacing-large);
   align-items: center;
   .select {
     margin-inline-start: auto;
@@ -63,6 +63,6 @@
 }
 
 .section-block {
-  padding-block: var(--s3);
-  padding-inline: var(--s2);
+  padding-block: var(--spacing-medium);
+  padding-inline: var(--spacing-small);
 }

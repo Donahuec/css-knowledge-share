@@ -1,0 +1,79 @@
+:root {
+    /* Color Theming */
+  /* primary colors that are theme independent */
+  /* using hsl and hsla for the flexibility of including opacity in color */
+  --primary: var(--nord8);
+  --primary-hsl: var(--nord8-hsl);
+  --secondary: var(--nord7);
+  --secondary-hsl: var(--nord7-hsl);
+  --tertiary: var(--nord10);
+  --tertiary-hsl: var(--nord10-hsl);
+
+  --success: var(--nord14);
+  --success-hsl: var(--nord14-hsl);
+  --warn: var(--nord12);
+  --warn-hsl: var(--nord12-hsl);
+  --error: var(--nord11);
+  --error-hsl: var(--nord11-hsl);
+
+  /* Dark Theme */
+  --dark-theme-background: var(--nord0);
+  --dark-theme-body-text: var(--nord6);
+  --dark-theme-surface: var(--nord1);
+  --dark-theme-surface-variant: var(--nord2);
+  --dark-theme-muted: var(--nord3);
+  --dark-theme-muted-hsl: var(--nord3-hsl);
+  --dark-theme-muted-text: var(--nord4);
+  --dark-theme-accent-text: var(--primary);
+
+  /* Light Theme */
+  --light-theme-background: var(--nord4);
+  --light-theme-body-text: var(--nord0);
+  --light-theme-surface: var(--nord5);
+  --light-theme-surface-variant: var(--nord6);
+  --light-theme-muted-hsl: var(--nord3-hsl);
+  --light-theme-muted: hsla(var(--light-theme-muted-hsl) / 0.5);
+  --light-theme-muted-text: var(--nord1);
+  /* nord primary color does not meet color contrast for light theme */
+  --light-theme-accent-text: hsl(193, 81%, 32%);
+
+  /*default to dark theme*/
+  color-scheme: var(--color-scheme, dark);
+  --background: var(--dark-theme-background);
+  --body-text: var(--dark-theme-body-text);
+  --surface: var(--dark-theme-surface);
+  --surface-variant: var(--dark-theme-surface-variant);
+  --muted: var(--dark-theme-muted);
+  --muted-hsl: var(--dark-theme-muted-hsl);
+  --muted-text: var(--dark-theme-muted-text);
+  --accent-text: var(--dark-theme-accent-text);
+
+  /* page preference is "light" */
+  /* https://www.smashingmagazine.com/2024/03/setting-persisting-color-scheme-preferences-css-javascript/ */
+  &:has(#color-scheme option[value="light"]:checked) {
+    --color-scheme: light;
+    --background: var(--light-theme-background);
+    --body-text: var(--light-theme-body-text);
+    --surface: var(--light-theme-surface);
+    --surface-variant: var(--light-theme-surface-variant);
+    --muted: var(--light-theme-muted);
+    --muted-hsl: var(--light-theme-muted-hsl);
+    --muted-text: var(--light-theme-muted-text);
+    --accent-text: var(--light-theme-accent-text);
+  }
+
+  @media (prefers-color-scheme: light) {
+    &:has(#color-scheme option[value="system"]:checked) {
+      /*Light Theme*/
+      --color-scheme: light;
+      --background: var(--light-theme-background);
+      --body-text: var(--light-theme-body-text);
+      --surface: var(--light-theme-surface);
+      --surface-variant: var(--light-theme-surface-variant);
+      --muted: var(--light-theme-muted);
+      --muted-hsl: var(--light-theme-muted-hsl);
+      --muted-text: var(--light-theme-muted-text);
+      --accent-text: var(--light-theme-accent-text);
+    }
+  }
+}
