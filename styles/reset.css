@@ -12,14 +12,20 @@
 
 li {
   list-style: none;
+  padding: 0;
+  margin: 0;
+  &::marker {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 /* https://moderncss.dev/custom-select-styles-with-pure-css/ */
 select {
   appearance: none;
-  background-color: transparent;
+  /* background-color: transparent; */
   border: none;
-  padding: 0 1em 0 0;
+  padding: 0 1.5em 0  0.5em ;
   margin: 0;
   width: 100%;
   font-family: inherit;

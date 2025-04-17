@@ -13,8 +13,11 @@ https://moderncss.dev/custom-select-styles-with-pure-css/
   display: grid;
   grid-template-areas: "select";
   align-items: center;
-  &:focus-visible {
+  &:focus-within {
     outline: 2px solid var(--primary);
+  }
+  select {
+    background-color: var(--background);
   }
 }
 
@@ -50,7 +53,6 @@ details {
   border-radius: var(--s2);
   margin-block: var(--s2);
   max-width: 100%;
-  overflow: hidden;
 }
 
 summary {

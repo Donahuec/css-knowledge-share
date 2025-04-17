@@ -56,6 +56,23 @@
         </div>
       </header>
       <main class="layout-main">
+        <section>
+          <h2 class="decorated-header" #resources>Resources</h2>
+          <ul>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units#numbers_lengths_and_percentages">
+                MDN - CSS Values and Units
+              </a>
+            </li>
+            <li>
+              <a href="https://www.w3schools.com/cssref/css_units.php">W3Schools - CSS Units</a>
+            </li>
+            
+            <li>
+              <a href="https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/">Josh Comeau - The Surprising Truth About Pixels and Accessibility</a>
+            </li>
+          </ul>
+        </section>
         <section #units>
           <h2 class="decorated-header">Units</h2>
           <section class="section-block">
@@ -145,6 +162,13 @@
                 </dt>
               </span>
             </dl>
+            <span class="dl-item">
+              <dd>ch</dd>
+              <dt>
+                relative to the size of one character in the element's font, specifically the width of the "0" character. Good for sizing elements that
+                should be relative to the text inside them, such as input fields.
+              </dt>
+            </span>
             <h4>Examples</h4>
             <div class="font-examples">
               <p style="font-size: 1rem">
@@ -163,8 +187,16 @@
                 16px: The quick brown fox jumps over the lazy dog
               </p>
             </div>
+            <div> 
+              <label>10ch input: </label>
+              <input
+                type="text"
+                style="width: 10ch"
+                placeholder="10ch input"  />
+            </div>
           </section>
         </section>
+        
       </main>
     </div>
     <script src="./global.scripts.js"></script>
