@@ -32,23 +32,16 @@ select,
   grid-area: select;
 }
 
-pre,
-:not(pre) > code {
+pre {
   background-color: var(--background);
   font-family: var(--monospace-font);
   border-radius: 4px;
   overflow-x: auto;
   border-left: solid 3px;
+  max-width: 100%;
   border-color: var(--primary);
-}
-
-pre {
   padding-inline: var(--s6);
   padding-block: var(--s3);
-}
-
-:not(pre) > code {
-  padding: 2px 1ch;
 }
 
 details {
@@ -56,6 +49,8 @@ details {
   background-color: var(--surface-variant);
   border-radius: var(--s2);
   margin-block: var(--s2);
+  max-width: 100%;
+  overflow: hidden;
 }
 
 summary {

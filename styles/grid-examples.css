@@ -130,7 +130,7 @@
 
 .info-card-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-rows: auto auto 1fr;
   gap: var(--s2);
 

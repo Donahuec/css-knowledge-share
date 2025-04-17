@@ -20,7 +20,7 @@
 
 @media screen and (max-width: 1200px) {
   :root {
-    --edge-size: 10%;
+    --edge-size: 5%;
   }
 }
 
@@ -30,7 +30,7 @@
     --layout-padding: var(--s7);
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 564px) {
   :root {
     --edge-size: 0px;
     --min-edge: 0px;
@@ -59,4 +59,5 @@
 .layout-main {
   grid-area: main;
   max-width: 100%;
+  overflow: auto;
 }
