@@ -34,6 +34,117 @@ select,
   grid-area: select;
 }
 
+input {
+  background-color: var(--background);
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-small);
+  color: var(--body-text);
+  border: 1px solid var(--muted);
+  cursor: pointer;
+  line-height: 1.1;
+  &:focus-within {
+    outline: var(--focus-outline);
+  }
+}
+
+/* checkmark styling from https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
+.input-checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 1.5em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.input-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: .25em;
+  left: 0;
+  height: 1em;
+  width: 1em;
+  background-color: var(--background);
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-small);
+  border: 1px solid var(--muted);
+  cursor: pointer;
+}
+
+.input-checkbox  input:checked ~ .checkmark {
+  background-color: var(--primary);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.input-checkbox :after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.input-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.input-checkbox .checkmark:after {
+  left: .25em;
+  top: 0;
+  width: .5em;
+  height: .75em;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.input-radio {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 1.5em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.input-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radio {
+  position: absolute;
+  top: .25em;
+  left: 0;
+  height: 1em;
+  width: 1em;
+  background-color: var(--background);
+  border-radius: 50%;
+  padding: var(--spacing-small);
+  border: 1px solid var(--muted);
+  cursor: pointer;
+}
+
+.input-radio  input:checked ~ .radio {
+  background-color: var(--primary);
+}
+
 pre {
   background-color: var(--background);
   font-family: var(--monospace-font);
@@ -57,4 +168,17 @@ summary {
   cursor: pointer;
   font-weight: bold;
   padding: var(--spacing-extra-small);
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--background);
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-small);
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  &:focus-within {
+    outline: var(--focus-outline);
+  }
 }

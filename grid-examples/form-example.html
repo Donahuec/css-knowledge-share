@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>CSS Knowledge Share - Grid Example</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <main>
+        <section class="grid-container">
+            <section class="section-group" #quizType>
+                <div class="input-block">
+                    <label>Quiz Type</label>
+                    <div class="select">
+                        <select>
+                            <option>Reading Practice</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            <section class="section-group" #selectGroup>
+                <div class="stack">
+                    <span>School</span>
+                    <span><strong>School Name</strong></span>
+                </div>
+                <div class="stack">
+                    <span>Teacher</span>
+                    <span><strong>Teacher, Teacher</strong></span>
+                </div>
+                <div class="stack">
+                    <span>Class</span>
+                    <span><strong>Class Name</strong></span>
+                </div>
+                <div class="stack">
+                    <span>Group</span>
+                    <span><strong>Whole Class</strong></span>
+                </div>
+                <button>Change Students</button>
+            </section>
+            <section class="section-group" #demographics>
+                <div class="stack">
+                    <span>Demographics</span>
+                    <span><strong>All Demographics</strong></span>
+                </div>
+
+                <button>Choose Demographics</button>
+            </section>
+            <section class="section-group" #groupBy>
+                <div class="stack">
+                    <div class="input-block">
+                        <label>Group By</label>
+
+                        <div class="select">
+                            <select>
+                                <option>Classes/Groups</option>
+                            </select>
+                        </div>
+                    </div>
+                    <label class="input-checkbox">
+                        Show only quizzes taken for each specific class
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="input-block">
+                    <label>Date Range</label>
+                    <input type="date" />
+                </div>
+                <div class="input-block">
+                    <label>Average Percent Correct</label>
+                    <div class="radio-group">
+                        <label class="input-radio">
+                            Below 85%
+                            <input type="radio" name="apc" checked>
+                            <span class="radio"></span>
+                        </label>
+                        <label class="input-radio">
+                            Above 85%
+                            <input type="radio" name="apc">
+                            <span class="radio"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+            <section class="section-group" #readingType>
+                <div class="input-block">
+                    <label>Reading Level Scale</label>
+
+                    <div class="select">
+                        <select>
+                            <option>ATOS Scale</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-block">
+                    <label>Quiz Language</label>
+
+                    <div class="select">
+                        <select>
+                            <option>English and Spanish</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            <section class="section-group" #actions>
+                <button>Update Report</button>
+                <label class="input-checkbox">
+                    Hide Groups Without Data
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
