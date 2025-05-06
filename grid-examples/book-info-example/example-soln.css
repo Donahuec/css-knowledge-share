@@ -1,0 +1,41 @@
+.quiz-info {
+    display: grid;
+    grid-template-areas:
+    ".....  title       ......." 
+    "image  type        details"
+    "image  author      details"
+    "image  description details"
+    "button button      button";
+    grid-template-columns: min-content 1fr fit-content;
+    grid-template-rows: auto auto auto 1fr auto;
+    row-gap: var(--spacing-small);
+    column-gap: var(--spacing-large);
+}
+
+/* .quiz-info {
+    display: grid;
+    grid-template:
+    ".....  title       ......." auto
+    "image  type        details" auto
+    "image  author      details" auto
+    "image  description details" 1fr
+    "button button      button"  auto 
+    / min-content 1fr max-content;
+    row-gap: var(--spacing-small);
+    column-gap: var(--spacing-large);
+} */
+
+.button-container {
+    display: grid;
+    grid-template-columns: subgrid;
+    .take-quiz-button {
+        grid-column: -2 / -1;
+    }
+}
+
+dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--spacing-medium);
+}
+

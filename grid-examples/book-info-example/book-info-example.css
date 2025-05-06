@@ -1,0 +1,64 @@
+@import "../../styles.css";
+
+.quiz-info {
+    border: 1px solid var(--muted);
+    padding: var(--spacing-large);
+    margin: var(--spacing-medium);
+    border-radius: var(--border-radius-small);
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+.book-title {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.button-container {
+    margin-inline: calc(-1 * var(--spacing-large));
+    padding-inline-end: var(--spacing-large);
+    padding-top: var(--spacing-medium);
+    border-top: 1px solid var(--muted);
+}
+
+.take-quiz-button {
+    margin-block-start: var(--spacing-medium);
+}
+
+dt {
+    text-align: right;
+    display: inline;
+}
+
+dd {
+    font-weight: 700;
+    display: inline;
+}
+
+.book-title {
+    grid-area: title;
+}
+
+.book-image {
+    grid-area: image;
+}
+
+.book-type {
+    grid-area: type;
+}
+
+.book-author {
+    grid-area: author;
+}
+
+.book-description {
+    grid-area: description;
+}
+
+.book-details {
+    grid-area: details;
+}
+
+.button-container {
+    grid-area: button;
+}
