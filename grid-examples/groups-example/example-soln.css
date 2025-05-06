@@ -1,0 +1,25 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: auto;
+}
+
+.section-group {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+    grid-row: min-content repeat(auto-fill, fit-content);
+    align-items: start;
+}
+
+.section-title {
+    grid-column: 1 / -1;
+}
+
+.book-block {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    justify-items: stretch;
+    align-items: center;
+}
