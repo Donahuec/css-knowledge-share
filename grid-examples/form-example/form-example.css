@@ -1,9 +1,8 @@
-@import "../styles.css";
+@import "../../styles.css";
 
 .input-block, .stack {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
 
 .radio-group {

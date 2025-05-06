@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>CSS Knowledge Share - Grid Example</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="form-example.css" />
 </head>
 <body>
     <main>
@@ -43,10 +43,10 @@
                     <span><strong>All Demographics</strong></span>
                 </div>
 
-                <button>Choose Demographics</button>
+                <button id="demographics-button">Choose Demographics</button>
             </section>
             <section class="section-group" #groupBy>
-                <div class="stack">
+                <div class="input-block">
                     <div class="input-block">
                         <label>Group By</label>
 
@@ -104,7 +104,7 @@
             </section>
             <section class="section-group" #actions>
                 <button>Update Report</button>
-                <label class="input-checkbox">
+                <label class="input-checkbox" id="hide-groups">
                     Hide Groups Without Data
                     <input type="checkbox">
                     <span class="checkmark"></span>
