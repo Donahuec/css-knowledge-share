@@ -8,7 +8,6 @@
     display: grid;
     grid-template-columns: subgrid;
     grid-column: 1 / -1;
-    grid-row: min-content repeat(auto-fill, fit-content);
     align-items: start;
 }
 
