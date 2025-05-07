@@ -12,20 +12,16 @@
     align-items: start;
     
 }
-.input-block {
+.input-block, #hide-groups {
     grid-column: span 2;
 }
 
 button {
     grid-column: span 2;
-    margin-inline: var(--spa);
+    margin-inline: var(--spacing-large);
     align-self: center;
 }
 
 #demographics-button {
     grid-column-end: -1;
-}
-
-#hide-groups {
-    grid-column: span 2;
 }
