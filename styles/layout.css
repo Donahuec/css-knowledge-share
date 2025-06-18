@@ -57,6 +57,12 @@
   text-align: center;
 }
 
+.layout-header-nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-large);
+}
+
 .layout-main {
   grid-area: main;
   max-width: 100%;
