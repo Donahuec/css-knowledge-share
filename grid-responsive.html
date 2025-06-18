@@ -6,6 +6,23 @@
   <title>CSS Knowledge Share - Responsive Grid</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="./styles/grid-examples.css" />
+  <style>
+    .grid {
+      display: grid;
+      width: 100%;
+      gap: 10px;
+    }
+
+    ul.bulleted {
+      list-style: unset;
+      padding-left: 20px;
+
+      li {
+        list-style: unset;
+        margin-bottom: 5px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -42,144 +59,197 @@
             <a href="https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/">Look Ma, No
               Media Queries! Responsive Layouts Using CSS Grid</a>
           </li>
+          <li>
+            <a href="https://css-tricks.com/the-auto-flowing-powers-of-grids-dense-keyword/">The Auto-Flowing Powers of
+              Grid’s Dense Keyword</a>
+          </li>
+          <li>
+            <a href="https://css-tricks.com/exploring-css-grids-implicit-grid-and-auto-placement-powers/">Exploring CSS
+              Grid’s Implicit Grid and Auto-Placement Powers</a>
+          </li>
+          <li>
+            <a href="https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/">Auto-Sizing Columns in
+              CSS Grid: `auto-fill` vs `auto-fit`</a>
+          </li>
+          <li>
+            <a href=""></a>
+          </li>
         </ul>
       </section>
       <section>
-        <h2 class="decorated-header">Notes</h2>
+        <h2 class="decorated-header">Concepts</h2>
         <section class="section-block">
           <h3>Adaptive Grids without Media Queries</h3>
-          <h4>Repeat, Auto-Fill, and Auto-Fit</h4>
-          <h4>MinMax</h4>
-          <h4>Grid Auto Flow</h4>
+          <ul class="bulleted">
+            <li>Use `repeat(auto-fit, ...)` or `repeat(auto-fill, ...)` to create adaptive
+              grid layouts.</li>
+            <li>Utilize `minmax()` to define minimum and maximum sizes for grid items.</li>
+            <li>Use grid auto flow properties such as `grid-auto-rows` and `grid-auto-flow`
+              to define how automatic placement functions.</li>
+          </ul>
         </section>
-      </section>
-      <section>
-        <h2 class="decorated-header">Examples</h2>
+        <section>
+          <h2 class="decorated-header">Examples</h2>
+          <section class="section-block">
+
+            <h3>Grids with fixed size items</h3>
+            <style>
+              .responsive-grid-fixed-auto-fit {
+                grid-template-columns: repeat(auto-fit, 100px);
+              }
+
+              .responsive-grid-fixed-auto-fill {
+                grid-template-columns: repeat(auto-fill, 100px);
+              }
+            </style>
+            <h4>Auto-Fit</h4>
+            <div class="grid responsive-grid-fixed-auto-fit">
+              <div class="grid-item">1</div>
+              <div class="grid-item">2</div>
+              <div class="grid-item">3</div>
+              <div class="grid-item">4</div>
+              <div class="grid-item">5</div>
+            </div>
+            <h4>Auto-Fill</h4>
+            <div class="grid responsive-grid-fixed-auto-fill">
+              <div class="grid-item">1</div>
+              <div class="grid-item">2</div>
+              <div class="grid-item">3</div>
+              <div class="grid-item">4</div>
+              <div class="grid-item">5</div>
+            </div>
+            <details>
+              <summary>CSS</summary>
+              <pre><code>
+.responsive-grid-fixed-auto-fit {
+  grid-template-columns: repeat(auto-fit, 100px);
+}
+
+.responsive-grid-fixed-auto-fill {
+  grid-template-columns: repeat(auto-fill, 100px);
+}
+            </code></pre>
+            </details>
+          </section>
+          <section class="section-block">
+            <h3>Grids with dynamically sized items</h3>
+            <style>
+              .responsive-grid-flex-auto-fit {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+              }
+
+              .responsive-grid-flex-auto-fill {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+              }
+            </style>
+            <h4>Auto-Fit</h4>
+            <div class="grid responsive-grid-flex-auto-fit">
+              <div class="grid-item">1</div>
+              <div class="grid-item">2</div>
+              <div class="grid-item">3</div>
+              <div class="grid-item">4</div>
+              <div class="grid-item">5</div>
+            </div>
+            <h4>Auto-Fill</h4>
+            <div class="grid responsive-grid-flex-auto-fill">
+              <div class="grid-item">1</div>
+              <div class="grid-item">2</div>
+              <div class="grid-item">3</div>
+              <div class="grid-item">4</div>
+              <div class="grid-item">5</div>
+            </div>
+            <details>
+              <summary>CSS</summary>
+              <pre><code>
+.responsive-grid-flex-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+.responsive-grid-flex-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+            </code></pre>
+            </details>
+          </section>
+          <section class="section-block">
+            <h3>Grids with mixed sized items using auto flow dense</h3>
+            <style>
+              .responsive-grid-mixed-auto-flow {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                grid-auto-rows: 100px;
+
+                &.dense {
+                  grid-auto-flow: dense;
+                }
+
+                &>.grid-item {
+                  display: grid;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+                &>.grid-item.wide {
+                  grid-column: span 3;
+                }
+
+                &>.grid-item.tall {
+                  grid-row: span 2;
+                }
+
+                &>.grid-item.square {
+                  grid-row: span 2;
+                  grid-column: span 2;
+                }
+
+                &>.grid-item.special {
+                  grid-row: 2 / span 2;
+                  grid-column: 2 / -2;
+                  background-color: var(--error);
+                }
+              }
+            </style>
+            <div class="grid responsive-grid-mixed-auto-flow dense">
+              <div class="grid-item tall">1</div>
+              <div class="grid-item wide">2</div>
+              <div class="grid-item square">3</div>
+              <div class="grid-item wide">4</div>
+              <div class="grid-item square">5
+              </div>
+              <div class="grid-item">6</div>
+              <div class="grid-item wide">7</div>
+              <div class="grid-item square">8</div>
+              <div class="grid-item tall">9</div>
+              <div class="grid-item">10</div>
+              <div class="grid-item wide">11</div>
+              <div class="grid-item">12</div>
+              <div class="grid-item tall">13</div>
+              <div class="grid-item wide">14</div>
+              <div class="grid-item special">15</div>
+              <div class="grid-item">16</div>
+              <div class="grid-item">17</div>
+              <div class="grid-item">18</div>
+              <div class="grid-item">19</div>
+              <div class="grid-item">20</div>
+              <div class="grid-item">21</div>
+            </div>
+          </section>
+          <details>
+            <summary>CSS</summary>
+            <pre><code>
+.responsive-grid-mixed-auto-flow {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 100px;
+  &.dense {
+    grid-auto-flow: dense;
+  }
+}
+            </code></pre>
+          </details>
+
+
+        </section>
+
         <section class="section-block">
-
-          <h3>Grids with fixed size items</h3>
-          <style>
-            .grid {
-              display: grid;
-              width: 100%;
-              gap: 10px;
-            }
-
-            .responsive-grid-fixed-auto-fit {
-              grid-template-columns: repeat(auto-fit, 100px);
-            }
-
-            .responsive-grid-fixed-auto-fill {
-              grid-template-columns: repeat(auto-fill, 100px);
-            }
-          </style>
-          <h4>Auto-Fit</h4>
-          <div class="grid responsive-grid-fixed-auto-fit">
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">4</div>
-            <div class="grid-item">5</div>
-          </div>
-          <h4>Auto-Fill</h4>
-          <div class="grid responsive-grid-fixed-auto-fill">
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">4</div>
-            <div class="grid-item">5</div>
-          </div>
         </section>
-        <section class="section-block">
-          <h3>Grids with dynamically sized items</h3>
-          <style>
-            .responsive-grid-flex-auto-fit {
-              grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            }
-
-            .responsive-grid-flex-auto-fill {
-              grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            }
-          </style>
-          <h4>Auto-Fit</h4>
-          <div class="grid responsive-grid-flex-auto-fit">
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">4</div>
-            <div class="grid-item">5</div>
-          </div>
-          <h4>Auto-Fill</h4>
-          <div class="grid responsive-grid-flex-auto-fill">
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">4</div>
-            <div class="grid-item">5</div>
-          </div>
-        </section>
-        <section class="section-block">
-          <h3>Grids with mixed sized items</h3>
-          <style>
-            .responsive-grid-mixed-auto-fit {
-              grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-              grid-auto-rows: 100px;
-
-              &.dense {
-                grid-auto-flow: dense;
-              }
-
-              &>.grid-item.wide {
-                grid-column: span 3;
-              }
-
-              &>.grid-item.tall {
-                grid-row: span 2;
-              }
-
-              &>.grid-item.square {
-                grid-row: span 2;
-                grid-column: span 2;
-              }
-
-              &>.grid-item.special {
-                grid-row: 2 / span 2;
-                grid-column: 2 / -2;
-                background-color: var(--error);
-              }
-            }
-          </style>
-          <h4>Auto-Fit</h4>
-          <div class="grid responsive-grid-mixed-auto-fit dense">
-            <div class="grid-item tall">1</div>
-            <div class="grid-item wide">2</div>
-            <div class="grid-item square">3</div>
-            <div class="grid-item wide">4</div>
-            <div class="grid-item square">5</div>
-            <div class="grid-item">6</div>
-            <div class="grid-item wide">7</div>
-            <div class="grid-item square">8</div>
-            <div class="grid-item tall">9</div>
-            <div class="grid-item">10</div>
-            <div class="grid-item wide">11</div>
-            <div class="grid-item">12</div>
-            <div class="grid-item tall">13</div>
-            <div class="grid-item wide">14</div>
-            <div class="grid-item special">15</div>
-            <div class="grid-item">16</div>
-            <div class="grid-item">17</div>
-            <div class="grid-item">18</div>
-            <div class="grid-item">19</div>
-            <div class="grid-item">20</div>
-            <div class="grid-item">21</div>
-          </div>
-        </section>
-
-
-      </section>
-
-      <section class="section-block">
-      </section>
       </section>
     </main>
   </div>
